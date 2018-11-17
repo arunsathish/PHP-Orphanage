@@ -5,14 +5,18 @@
             </div>
             <a class="item" href="index.php">Home</a>
             <div class="right menu">
-                <a href="member-active.php" class="item">Members</a>
+                <a href="member-active.php" class="item <?php echo ($_SERVER['PHP_SELF'] == "/orphan/member-active.php" ? "active" : "");?>">Members</a>
 
                 <?php
-                    if (empty($_SESSION['user_id'])) {
-                        echo '<a class="item" href="login.php">Login</a>';
-                    } else {
-                        echo '<a class="item" href="admin/index.php">Admin</a>';
-                    }
+                    if (empty($_SESSION['user_id'])) { 
+                ?>
+                        <a href="login.php" class="item <?php echo ($_SERVER['PHP_SELF'] == "/orphan/login.php" ? "active" : "");?>">Login</a>
+                <?php
+                    } else { 
+                ?>
+                        <a href="admin/index.php" class="item">Admin</a>
+                <?php
+                    } 
                 ?>
 
             </div>
