@@ -14,7 +14,8 @@
                 <?php
                     } else { 
                 ?>
-                        <a href="admin/index.php" class="item">Admin</a>
+                        <a href="admin/index.php" class="item">Admin Panel</a>
+                        <a href="logout.php" class="item">Logout</a>
                 <?php
                     } 
                 ?>
