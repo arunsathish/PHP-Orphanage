@@ -29,7 +29,7 @@
 
                         <div class="item">
                             <div class="ui image">
-                                <img src="https://randomuser.me/api/portraits/men/66.jpg">
+                                <img src="img/defaultimg.png" style="width: 120px;">
                             </div>
                             <div class="content">
                                 <div class="meta">
@@ -37,26 +37,29 @@
                                 </div>
                                 <div class="description">
                                     <div class="ui horizontal list">
+
                                         <div class="item">
                                             <div class="content">
-                                                <div>Name:</div> Nagesh
+                                                <div>Name:</div> <strong>Nagesh</strong>
                                             </div>
                                         </div>
                                         <div class="item">
                                             <div class="content">
-                                                <div>Age:</div> 15
+                                                <div>Age:</div> <strong>15</strong>
                                             </div>
                                         </div>
                                         <div class="item">
                                             <div class="content">
-                                            <div>Class:</div> 2nd Grade
+                                            <div>Class:</div> <strong>2nd Grade</strong>
                                             </div>
                                         </div>
                                         <div class="item">
                                             <div class="content">
-                                            <div>Year of enroll:</div> 2017-18
+                                            <div>Year of enroll:</div> <strong>2017-18</strong>
                                             </div>
                                         </div>
+
+
                                     </div>
                                 </div>
                                 <div class="extra">
@@ -66,12 +69,12 @@
                                     <div class="ui horizontal list">
                                         <div class="item">
                                             <div class="content">
-                                                <div>Name:</div> KLVN Narayana
+                                                <div>Name:</div> <strong>KLVN Narayana</strong>
                                             </div>
                                         </div>
                                         <div class="item">
                                             <div class="content">
-                                                <div>Email ID:</div> katikareddy@gmail.com
+                                                <div>Email ID:</div> <strong>katikareddy@gmail.com</strong>
                                             </div>
                                         </div>
                                     </div>

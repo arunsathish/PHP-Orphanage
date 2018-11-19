@@ -15,6 +15,7 @@
                 <h1>Donation Application</h1>
 
                 <form class="ui form">
+
                     <h4 class="ui dividing header">Select the program to sponsor</h4>
                     <div class="grouped fields">
                         <label for="program">Programs: </label>
@@ -55,6 +56,47 @@
                           </div>
                         </div>
                     </div>
+
+                    <div class="field">
+                      <label>Amount</label>
+                      <input type="number" name="amount" min="1" placeholder="Amount">
+                    </div>
+
+                    <h4 class="ui dividing header">Check and Demand Draft</h4>
+                    <div class="field">
+                      <label>Check / DD no.</label>
+                      <input type="text" name="check" placeholder="Check / DD no.">
+                    </div>
+                    <div class="field">
+                      <label>Bank Name</label>
+                      <input type="text" name="bank-name" placeholder="Bank Name">
+                    </div>
+                    <div class="field">
+                      <label>Place</label>
+                      <input type="text" name="place" placeholder="Place">
+                    </div>
+
+                    <h4 class="ui dividing header">Personal Information</h4>
+                    <div class="field">
+                        <label>Type of Gift</label>
+                        <input type="text" name="name" placeholder="Full Name">
+                    </div>
+                    <div class="field">
+                        <label>Email</label>
+                        <input type="email" name="email" placeholder="Email">
+                    </div>
+                    <div class="field">
+                        <label>Phone no.</label>
+                        <input type="tel" name="email" placeholder="Phone / Mobile">
+                    </div>
+                    <div class="field">
+                        <label>Address</label>
+                        <input type="text" name="address" placeholder="Address">
+                    </div>
+                    <button class="ui primary button" type="submit">Submit</button>
+                    <button class="ui button" type="reset">Reset</button>
+
+
                 </form>
 
                 <span class="p-20"></span>

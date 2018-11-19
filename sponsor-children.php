@@ -14,48 +14,105 @@
             <div class="twelve wide column">
                 <h1>Sponsor this Child</h1>
 
-                
 
-                <form class="ui form">
+                <?php
+
+                    if(isset($_POST['submit'])) {
+                        $cid = $_GET['cid'];
+                        $noofyear = $_POST['noofyear'];
+                        $firstname = $_POST['firstname'];
+                        $lastname = $_POST['lastname'];
+                        $email = $_POST['email'];
+                        $phone = $_POST['phone'];
+                        $address = $_POST['address'];
+                        $amount = $_POST['amount'];
+                        $checkno = $_POST['checkno'];
+
+                        $sql = "INSERT INTO sponsorer (spn_firstname, spn_lastname, spn_noofyears, spn_email, spn_phone, spn_bill_address, spn_amount, spn_checkno, cid) 
+                                    VALUES ('$firstname', '$lastname', '$noofyear', '$email', '$phone', '$address', '$amount', '$checkno', '$cid')";
+
+                        if ($conn->query($sql) === TRUE) {
+                            $unsponsored_page = './child-gallery-sponsored.php';
+                            header('Location: ' . $unsponsored_page);
+                            echo "<script> alert('New record created successfully'); </script>";
+                        } else {
+                            echo "<script> alert('Error in Insertion'); </script>";
+                        }
+                        
+                        $conn->close();
+
+
+                    } else {
+
+                    }
+
+                ?>
+
+
+                <form action="<?php $_PHP_SELF ?>" method="post" class="ui form">
                     <h4 class="ui dividing header">Child's Details</h4>
-                    <img class="ui small top aligned circular image" src="https://randomuser.me/api/portraits/men/66.jpg">
+                    <img class="ui small top aligned circular image" src="img/defaultimg.png">
+
+                    <?php
+                        if(isset($_GET['cid'])) {
+                            $cid = $_GET['cid'];
+                        } else {
+                            $unsponsored_page = './child-gallery-sponsored.php';
+                            header('Location: ' . $unsponsored_page);
+                        }
+
+                        $sql = "SELECT cid, cname, cdob, cyoe, cclass FROM children WHERE cid='$cid'";
+                        $result = $conn->query($sql);
+
+                        if ($result->num_rows > 0) {
+                            // output data of each row
+                            while($row = $result->fetch_assoc()) {
+                                $dob = $row["cdob"];
+                                $age = (date('Y') - date('Y',strtotime($dob)));
+                    ?>
+
                     <span>
                         <div class="description">
                             <div class="ui horizontal list">
                                 <div class="item">
                                     <div class="content">
-                                        <div>Name:</div> Nagesh
+                                        <div>Name:</div> <strong><?php echo $row["cname"]; ?></strong>
                                     </div>
                                 </div>
                                 <div class="item">
                                     <div class="content">
-                                        <div>Age:</div> 15
+                                        <div>Age:</div> <strong><?php echo $age; ?></strong>
                                     </div>
                                 </div>
                                 <div class="item">
                                     <div class="content">
-                                    <div>Class:</div> 2nd Grade
+                                    <div>Class:</div> <strong><?php echo $row["cclass"]; ?></strong>
                                     </div>
                                 </div>
                                 <div class="item">
                                     <div class="content">
-                                    <div>Year of enroll:</div> 2017-18
+                                    <div>Year of enroll:</div> <strong><?php echo $row["cyoe"]; ?></strong>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </span>
+                    
+                    <?php
+                            }
+                        }
+                    ?>
 
 
                     <h4 class="ui dividing header">Sponsor Type</h4>
                     <div class="two fields">
                         <div class="field">
-                            <select class="ui fluid dropdown">
+                            <select name="noofyear" class="ui fluid dropdown">
                                 <option value="">Number of Years</option>
-                                <option value="1year">1 Year</option>
-                                <option value="2year">2 Years</option>
-                                <option value="3year">3 Years</option>
-                                <option value="5year">5 Years</option>
+                                <option value="1">1 Year</option>
+                                <option value="2">2 Years</option>
+                                <option value="3">3 Years</option>
+                                <option value="5">5 Years</option>
                             </select>
                         </div>
                         <div class="field">
@@ -70,15 +127,14 @@
 
 
                     <h4 class="ui dividing header">Personal Information</h4>
-                    <div class="field">
-                        <label>Name</label>
-                        <div class="two fields">
-                            <div class="field">
-                                <input type="text" name="shipping[first-name]" placeholder="First Name">
-                            </div>
-                            <div class="field">
-                                <input type="text" name="shipping[last-name]" placeholder="Last Name">
-                            </div>
+                    <div class="fields">
+                        <div class="eight wide field">
+                            <label>First Name</label>
+                            <input type="text" name="firstname" placeholder="First Name">
+                        </div>
+                        <div class="eight wide field">
+                            <label>Last Name</label>
+                            <input type="text" name="lastname" placeholder="Last Name">
                         </div>
                     </div>
 
@@ -97,7 +153,7 @@
                         <label>Billing Address</label>
                         <div class="field">
                         <div class="sixteen wide field">
-                            <input type="text" name="shipping[address]" placeholder="Address">
+                            <input type="text" name="address" placeholder="Address">
                         </div>
                         </div>
                     </div>
@@ -105,16 +161,16 @@
                     <div class="field">
                         <div class="eight wide field">
                         <label>Amount</label>
-                        <input type="number" name="number" min="1" maxlength="16" placeholder="Amount">
+                        <input type="number" name="amount" min="1" maxlength="16" placeholder="Amount">
                         </div>
                     </div>
                     <div class="field">
                         <div class="eight wide field">
                             <label>Check / DD no.</label>
-                            <input type="text" name="card[cvc]" maxlength="3">
+                            <input type="text" name="checkno">
                         </div>
                     </div>
-                    <div class="ui primary button" tabindex="0">Submit</div>
+                    <button name="submit" class="ui primary button" tabindex="0">Submit</button>
                 </form>
 
             </div>
