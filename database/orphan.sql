@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 20, 2018 at 04:14 PM
+-- Generation Time: Nov 20, 2018 at 04:32 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 5.6.38
 
@@ -194,7 +194,9 @@ INSERT INTO `programs` (`program_id`, `program_title`, `program_desc`) VALUES
 (1, 'AAKAR - the first step', 'This is program is meant to familiarize street children and their families with the importance of education through counselling by our staff and later they are enrolled in our organization where, with the help of our non-formal way of teaching through workshops by trained teachers, they are developed a love for learning. They are later admitted in MCD or public schools for formal education. A regular monitoring is done through frequent home visits by staff members. They are also helped in their studies at our learning centers opened at different locations for the convenience of chidren in order to help them in their smooth journey in school and prevent them from dropping out.'),
 (2, 'AHAR APURTI', 'To distribute food to the underprivileged, downtradden and marginalized people esp, children from the weaker sections of the society.'),
 (3, 'AVSAR - a chance', 'This program has been designed to assist the meritorious children of the underprivileged class in getting admission in reputed public schools for quality education under EWS quota.'),
-(4, 'Lakshya', 'To provide coaching classes for 6-12 class students of the economically weaker sections by dedicated and qualified staff. It has been designed keeping in mind the requirement of talented students who failed to afford expensive coaching being given at private coaching centers and therefore tag behind and remain unable to fullfil their dream of higher education in prestigious institutions.');
+(4, 'Lakshya', 'To provide coaching classes for 6-12 class students of the economically weaker sections by dedicated and qualified staff. It has been designed keeping in mind the requirement of talented students who failed to afford expensive coaching being given at private coaching centers and therefore tag behind and remain unable to fullfil their dream of higher education in prestigious institutions.'),
+(5, 'PARIVARAN - change of directio', 'The program is meant to bring about positive changed in the life of street children by convincing and motivating them and their parents for the education of their children and helping them in their school admission and other financial assistance if required.'),
+(7, 'UPHAAR - gift a smile', 'This project aims to bridge the gap between underprivileged street children and their counterparts. This provides you with an opportunity to put to good use the clothes or toys your child has outgrown.');
 
 -- --------------------------------------------------------
 
@@ -321,7 +323,7 @@ ALTER TABLE `newsletter`
 -- AUTO_INCREMENT for table `programs`
 --
 ALTER TABLE `programs`
-  MODIFY `program_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `program_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `sponsorer`
