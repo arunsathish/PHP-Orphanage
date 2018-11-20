@@ -12,7 +12,15 @@
 
             <!-- right content -->
             <div class="twelve wide column">
-                <h1 style="text-align: center;">Welcome to Administrator</h1>            
+                <h1>Member Hierarchy</h1>
+
+                <ul class="ui list">
+                    <li>Executive Committe</li>
+                    <li>Governing Body</li>
+                    <li>Management</li>
+                    <li>Staff</li>
+                </ul>
+         
             </div>
         </div>
 

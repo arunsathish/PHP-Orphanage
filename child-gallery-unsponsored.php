@@ -27,7 +27,7 @@
 
                 <?php
 
-                    $sql = "SELECT cid, cname, cdob, cyoe, cclass FROM children";
+                    $sql = "SELECT cid, cname, cdob, cyoe, cclass FROM children WHERE sponsored=0";
 
                     $result = $conn->query($sql);
 

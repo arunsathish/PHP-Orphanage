@@ -31,7 +31,7 @@
                             VALUES ('$program', '$amount', '$checkno', '$bank_name', '$place', '$name', '$email', '$phone', '$address')";
 
                     if ($conn->query($sql) === TRUE) {
-                        echo "<script> alert('New record created successfully'); </script>";
+                        echo "<script> alert('Successfully Donation form Submitted'); </script>";
                     } else {
                         echo "<script> alert('Error in Insertion'); </script>";
                     }

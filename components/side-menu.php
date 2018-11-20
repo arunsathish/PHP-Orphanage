@@ -5,7 +5,6 @@
         <a class="item <?php echo ($_SERVER['PHP_SELF'] == "/orphan/child-gallery-sponsored.php" ? "active" : "");?>" href="child-gallery-sponsored.php">Child Gallery</a>
         <a class="item <?php echo ($_SERVER['PHP_SELF'] == "/orphan/approach-strategy.php" ? "active" : "");?>" href="approach-strategy.php">Approach & Strategy</a>
         <a class="item <?php echo ($_SERVER['PHP_SELF'] == "/orphan/program.php" ? "active" : "");?>" href="program.php">Programs</a>
-        <a class="item <?php echo ($_SERVER['PHP_SELF'] == "/orphan/sponsorship.php" ? "active" : "");?>" href="sponsorship.php">Sponsorship</a>
         <a class="item <?php echo ($_SERVER['PHP_SELF'] == "/orphan/donation.php" ? "active" : "");?>" href="donation.php">Donation</a>
         <a class="item <?php echo ($_SERVER['PHP_SELF'] == "/orphan/photo-gallery.php" ? "active" : "");?>" href="photo-gallery.php">Photo Gallery</a>
         <a class="item <?php echo ($_SERVER['PHP_SELF'] == "/orphan/newsletter.php" ? "active" : "");?>" href="newsletter.php">Newsletter</a>

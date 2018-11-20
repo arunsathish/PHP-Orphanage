@@ -14,7 +14,29 @@
             <div class="twelve wide column">
                 <h1>Newsletter</h1>
 
-                <form class="ui form">
+                <?php
+
+                    if(isset($_POST['submit_newsletter'])) {
+                        $issue = $_POST['issue'];
+                        $story = $_POST['story'];
+                        $month = $_POST['month'];
+
+                        $sql = "INSERT INTO newsletter (n_issue, n_story, n_month) 
+                                VALUES ('$issue', '$story', '$month')";
+
+                        if ($conn->query($sql) === TRUE) {
+                                echo "<script> alert('Newsletter successfully submitted'); </script>";
+                        } else {
+                            echo "<script> alert('Error in Insertion'); </script>";
+                        }
+                        $conn->close();
+
+                    }
+
+                ?>
+
+
+                <form action="<?php $_PHP_SELF ?>" method="post" class="ui form">
                     <div class="seven wide field">
                         <label>Issue</label>
                         <input type="text" name="issue">
@@ -25,23 +47,23 @@
                     </div>
                     <div class="field">
                         <label>Month</label>
-                        <select class="ui search dropdown">
+                        <select name="month" class="ui search dropdown">
                             <option value="" disabled selected>Month</option>
-                            <option value="jan">January</option>
-                            <option value="feb">February</option>
-                            <option value="march">March</option>
-                            <option value="april">April</option>
-                            <option value="may">May</option>
-                            <option value="june">June</option>
-                            <option value="july">July</option>
-                            <option value="aug">August</option>
-                            <option value="sept">September</option>
-                            <option value="oct">October</option>
-                            <option value="nov">November</option>
-                            <option value="dec">December</option>
+                            <option value="January">January</option>
+                            <option value="February">February</option>
+                            <option value="March">March</option>
+                            <option value="April">April</option>
+                            <option value="May">May</option>
+                            <option value="June">June</option>
+                            <option value="July">July</option>
+                            <option value="August">August</option>
+                            <option value="September">September</option>
+                            <option value="October">October</option>
+                            <option value="November">November</option>
+                            <option value="December">December</option>
                         </select>
                     </div>
-                    <button type="submit" class="ui primary button">Submit</button>
+                    <button name="submit_newsletter" type="submit" class="ui primary button">Submit</button>
                     <button type="reset" class="ui button">Reset</button>
                 </form>
 

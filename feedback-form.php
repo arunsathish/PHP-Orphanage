@@ -13,24 +13,43 @@
             <!-- right content -->
             <div class="twelve wide column">
                 <h1>Feed Back</h1>
-                
-                <form class="ui form">
+
+
+                <?php
+                    if(isset($_POST['submit_feedback'])) {
+                        $name = $_POST['full_name'];
+                        $address = $_POST['full_address'];
+                        $phone = $_POST['phone'];
+                        $email = $_POST['email'];
+                        $comment = $_POST['comment'];
+
+                        $sql = "INSERT INTO feedback (full_name, full_address, phone, email, comment) 
+                                VALUES ('$name', '$address', '$phone', '$email', '$comment')";
+
+                        if ($conn->query($sql) === TRUE) {
+                            echo "<script> alert('Feedback successfully sent'); </script>";
+                        } else {
+                            echo "<script> alert('Error in Insertion'); </script>";
+                        }
+                        
+                        $conn->close();
+
+
+                    }
+
+                ?>
+
+
+                <form action="<?php $_PHP_SELF ?>" method="post" class="ui form">
                     <div class="field">
                         <label>Name</label>
-                        <div class="two fields">
-                          <div class="field">
-                            <input type="text" name="first-name" placeholder="First Name">
-                          </div>
-                          <div class="field">
-                            <input type="text" name="last-name" placeholder="Last Name">
-                          </div>
-                        </div>
+                        <input type="text" name="full_name" placeholder="Full Name">
                     </div>
                     <div class="field">
                         <label>Address</label>
                         <div class="field">
                           <div class="sixteen wide field">
-                            <input type="text" name="address" placeholder="Address">
+                            <input type="text" name="full_address" placeholder="Address">
                           </div>
                         </div>
                     </div>
@@ -52,9 +71,9 @@
                     </div>
                     <div class="field">
                         <label>Comments</label>
-                        <textarea rows="2"></textarea>
+                        <textarea rows="2" name="comment"></textarea>
                     </div>
-                    <button class="ui primary button" type="submit">Submit</button>
+                    <button name="submit_feedback" class="ui primary button" type="submit">Submit</button>
                     <button class="ui button" type="reset">Reset</button>
                 </form>
 

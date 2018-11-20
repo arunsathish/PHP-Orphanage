@@ -30,18 +30,17 @@
 
                         $sql = "INSERT INTO sponsorer (spn_firstname, spn_lastname, spn_noofyears, spn_email, spn_phone, spn_bill_address, spn_amount, spn_checkno, cid) 
                                     VALUES ('$firstname', '$lastname', '$noofyear', '$email', '$phone', '$address', '$amount', '$checkno', '$cid')";
+                                
+                        $sql2 = "UPDATE children SET sponsored=1 WHERE cid='$cid' ";
 
-                        if ($conn->query($sql) === TRUE) {
-                            $unsponsored_page = './child-gallery-sponsored.php';
-                            header('Location: ' . $unsponsored_page);
-                            echo "<script> alert('New record created successfully'); </script>";
+                        if ($conn->query($sql) === TRUE && $conn->query($sql2) === TRUE) {
+                                $unsponsored_page = './child-gallery-sponsored.php';
+                                header('Location: ' . $unsponsored_page);
+                                echo "<script> alert('New record created successfully'); </script>";
                         } else {
                             echo "<script> alert('Error in Insertion'); </script>";
                         }
-                        
                         $conn->close();
-
-
                     } else {
 
                     }

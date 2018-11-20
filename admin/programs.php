@@ -13,54 +13,42 @@
             <!-- right content -->
             <div class="twelve wide column">
                 <h1>Create New Programme Details</h1>
+
+                <?php
+                    if(isset($_POST['submit_program'])) {
+                        $title = $_POST['title'];
+                        $desc = $_POST['desc'];
+
+                        $sql = "INSERT INTO programs (program_title, program_desc) VALUES ('$title', '$desc')";
+                    
+
+                        if ($conn->query($sql) === TRUE) {
+                                echo "<script> alert('New Program created successfully'); </script>";
+                        } else {
+                            echo "<script> alert('Error in Insertion'); </script>";
+                        }
+                        $conn->close();
+
+                    }
+                ?>
                 
-                <form class="ui form">
+                <form action="<?php $_PHP_SELF ?>" method="post" class="ui form">
+
                     <div class="field">
                         <label>Title</label>
                         <div class="eight wide field">
                             <input type="text" name="title" placeholder="Program Title">
                         </div>
                     </div>
-                    <div class="field">
-                        <label>Target Population</label>
-                        <div class="eight wide field">
-                            <input type="text" name="target-population" placeholder="Target Population">
-                        </div>
-                    </div>
-                    <div class="field">
-                        <label>Geo Location</label>
-                        <div class="eight wide field">
-                            <input type="text" name="geo" placeholder="Geographic Location">
-                        </div>
-                    </div>
-                    <div class="field">
-                        <label>Age Group</label>
-                        <div class="eight wide field">
-                            <input type="text" name="age-group" placeholder="Age Groups">
-                        </div>
-                    </div>
+
                     <div class="field">
                         <label>Desciption</label>
                         <textarea type="text" name="desc" rows="2"></textarea>
                     </div>
-                    <div class="field">
-                        <label>Objective</label>
-                        <textarea type="text" name="objective" rows="2"></textarea>
-                    </div>
-                    <div class="field">
-                        <label>Approach</label>
-                        <textarea type="text" name="approach" rows="2"></textarea>
-                    </div>
-                    <div class="field">
-                        <label>Achievements</label>
-                        <textarea type="text" name="achievements" rows="2"></textarea>
-                    </div>
-                    <div class="field">
-                        <label>Assessment</label>
-                        <textarea type="text" name="assessment" rows="2"></textarea>
-                    </div>
-                    <button type="submit" class="ui primary button">Submit</button>
+
+                    <button name="submit_program" type="submit" class="ui primary button">Submit</button>
                     <button type="reset" class="ui button">Reset</button>
+
                 </form>
 
             </div>
