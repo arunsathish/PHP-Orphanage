@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 20, 2018 at 04:01 PM
+-- Generation Time: Nov 20, 2018 at 04:14 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 5.6.38
 
@@ -21,25 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `orphan`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `active_member`
---
-
-CREATE TABLE `active_member` (
-  `m_id` int(3) NOT NULL,
-  `m_name` varchar(20) NOT NULL,
-  `m_email` varchar(50) NOT NULL,
-  `m_address` int(50) NOT NULL,
-  `m_dob` date NOT NULL,
-  `m_nationality` varchar(20) NOT NULL,
-  `m_qualification` varchar(20) NOT NULL,
-  `m_institution` varchar(50) NOT NULL,
-  `m_profession` varchar(20) NOT NULL,
-  `m_areaofinterest` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -64,10 +45,10 @@ CREATE TABLE `children` (
 
 INSERT INTO `children` (`cid`, `cname`, `cdob`, `cyoe`, `cclass`, `cstory`, `cphoto`, `sponsored`) VALUES
 (7, 'Ganesh', '2006-12-20', 2009, 1, 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.', '', 0),
-(8, 'Suraj', '2005-06-15', 2007, 3, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', '', 1),
-(9, 'Sagar', '2006-06-14', 2008, 2, 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', '', 1),
-(11, 'Nagesh', '2005-04-08', 2009, 3, 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', '', 1),
-(13, 'umesh', '2007-06-14', 2010, 4, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', '', 1);
+(8, 'Suraj', '2005-06-15', 2007, 3, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', '', 0),
+(9, 'Sagar', '2006-06-14', 2008, 2, 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', '', 0),
+(11, 'Nagesh', '2005-04-08', 2009, 3, 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', '', 0),
+(13, 'umesh', '2007-06-14', 2010, 4, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', '', 0);
 
 -- --------------------------------------------------------
 
@@ -93,9 +74,9 @@ CREATE TABLE `donation` (
 --
 
 INSERT INTO `donation` (`d_id`, `program`, `amount`, `checkno`, `bank_name`, `place`, `d_name`, `email`, `phone`, `d_address`) VALUES
-(1, 'Lakshya', 10, '42f213', 'sbi', 'bengaluru', '', 'mukesh@gmail.com', 55555444, 'fghjk'),
-(2, 'Parivartan', 787, '98da93', 'canara', 'hydrabad', 'hitesh', 'dinesh@test.com', 55555444, 'rerererer'),
-(3, 'Parivartan', 4000, '98da93', 'fedaral', 'chennai', 'iran', 'iran@gmail.com', 22222222, 'wwqwqq');
+(1, 'Lakshya', 10000, '42f213', 'sbi', 'bengaluru', 'Ramesh', 'mukesh@gmail.com', 55555444, 'fghjk'),
+(2, 'Parivartan', 7870, '98da93', 'canara', 'hydrabad', 'hitesh', 'dinesh@test.com', 55555444, 'rerererer'),
+(3, 'Parivartan', 4000, '98da93', 'fedaral', 'chennai', 'Mahesh', 'mahesh@gmail.com', 22222222, 'wwqwqq');
 
 -- --------------------------------------------------------
 
@@ -117,7 +98,7 @@ CREATE TABLE `feedback` (
 --
 
 INSERT INTO `feedback` (`feed_id`, `full_name`, `full_address`, `phone`, `email`, `comment`) VALUES
-(1, '0', 'trtrtrtrtr', 55555444, 'tilak@gmail.com', 'fsdasdfafdads'),
+(1, 'Vyshak', 'trtrtrtrtr', 55555444, 'vishal@gmail.com', 'fsdasdfafdads'),
 (2, 'edwin', 'trtrtrtrtr', 55555444, 'test@test.com', 'szdsadasda');
 
 -- --------------------------------------------------------
@@ -249,12 +230,6 @@ INSERT INTO `sponsorer` (`spn_id`, `spn_firstname`, `spn_lastname`, `spn_noofyea
 --
 
 --
--- Indexes for table `active_member`
---
-ALTER TABLE `active_member`
-  ADD PRIMARY KEY (`m_id`);
-
---
 -- Indexes for table `children`
 --
 ALTER TABLE `children`
@@ -305,12 +280,6 @@ ALTER TABLE `sponsorer`
 --
 -- AUTO_INCREMENT for dumped tables
 --
-
---
--- AUTO_INCREMENT for table `active_member`
---
-ALTER TABLE `active_member`
-  MODIFY `m_id` int(3) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `children`
