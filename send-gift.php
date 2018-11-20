@@ -14,17 +14,41 @@
             <div class="twelve wide column">
                 <h1>Send a Gift</h1>
 
-                <form class="ui form">
+                <?php
+                    if(isset($_POST['submit_gift'])) {
+                        $cid = $_GET['cid'];
+                        $gift_type = $_POST['gift_type'];
+                        $sending_date = $_POST['sending_date'];
+                        $name = $_POST['name'];
+                        $email = $_POST['email'];
+                        $phone = $_POST['phone'];
+                        $address = $_POST['address'];
+                        // echo $cid . $gift_type . $sending_date . $name . $email . $phone . $address
+                        $sql = "INSERT INTO gift (cid, gift_type, sending_date, sender_name, email, phone, sender_address) 
+                                    VALUES ('$cid', '$gift_type', '$sending_date', '$name', '$email', '$phone', '$address')";
+
+                        if ($conn->query($sql) === TRUE) {
+                            $unsponsored_page = './child-gallery-unsponsored.php';
+                            header('Location: ' . $unsponsored_page);
+                            echo "<script> alert('New record created successfully'); </script>";
+                        } else {
+                            echo "<script> alert('Error in Insertion'); </script>";
+                        }
+                        
+                        $conn->close();
+
+                    }
+
+                ?>
+
+                <form action="<?php $_PHP_SELF ?>" method="post" class="ui form">
                     <h4 class="ui dividing header">Child's Details</h4>
                     <?php
                         if(isset($_GET['cid'])) {
                             $cid = $_GET['cid'];
                         }
-
                         $sql = "SELECT cid, cname, cdob, cyoe, cclass FROM children WHERE cid='$cid' ";
-
                         $result = $conn->query($sql);
-
                         if ($result->num_rows > 0) {
                             // output data of each row
                             while($row = $result->fetch_assoc()) {
@@ -66,32 +90,32 @@
                     <br>
                     <div class="field">
                         <label>Type of Gift</label>
-                        <input type="text" name="gift_type" placeholder="Eg. Dress, Toy,..">
+                        <input type="text" name="gift_type" placeholder="Eg. Dress, Toy,.." required>
                     </div>
 
                     <div class="field">
                         <label>Sending Date</label>
-                        <input type="date" name="sending_date">
+                        <input type="date" name="sending_date" required>
                     </div>
 
                     <h4 class="ui dividing header">Personal Information</h4>
                     <div class="field">
                         <label>Full Name</label>
-                        <input type="text" name="name" placeholder="Full Name">
+                        <input type="text" name="name" placeholder="Full Name" required>
                     </div>
                     <div class="field">
                         <label>Email</label>
-                        <input type="email" name="email" placeholder="Email">
+                        <input type="email" name="email" placeholder="Email" required>
                     </div>
                     <div class="field">
                         <label>Phone no.</label>
-                        <input type="tel" name="email" placeholder="Phone / Mobile">
+                        <input type="tel" name="phone" placeholder="Phone / Mobile" required>
                     </div>
                     <div class="field">
                         <label>Address</label>
-                        <input type="text" name="address" placeholder="Address">
+                        <input type="text" name="address" placeholder="Address" required>
                     </div>
-                    <button class="ui primary button" type="submit">Submit</button>
+                    <button name="submit_gift" class="ui primary button" type="submit">Submit</button>
                     <button class="ui button" type="reset">Reset</button>
 
                     
