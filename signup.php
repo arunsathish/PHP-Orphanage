@@ -31,19 +31,19 @@
                             mysqli_query($conn, $query);
 
                             // Confirm success with the user
-                            echo '<p>Your new account has been successfully created. You\'re now ready to <a href="login.php">log in</a>.</p>';
+                            echo '<div class="ui positive message">New account successfully created. Now ready to <a href="login.php">log in</a>.</div>';
 
                             mysqli_close($conn);
                             exit();
                         }
                         else {
                             // An account already exists for this username, so display an error message
-                            echo '<p class="error">An account already exists for this username. Please use a different address.</p>';
+                            echo '<div class="ui warning message">An account already exists for this username.</div>';
                             $username = "";
                         }
                         }
                         else {
-                        echo '<p class="error">You must enter all of the sign-up data, including the desired password twice.</p>';
+                        echo '<div class="ui warning message">Enter all sign-up data, including the desired password twice.</div>';
                         }
                     }
 
