@@ -30,4 +30,4 @@
     <script src="../semantic/semantic.min.js"></script>
     <link rel="stylesheet" href="../css/main.css">
 </head>
-<body>
+<body style="background-color: #bcbcbc;">

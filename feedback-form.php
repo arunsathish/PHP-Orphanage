@@ -43,13 +43,13 @@
                 <form action="<?php $_PHP_SELF ?>" method="post" class="ui form">
                     <div class="field">
                         <label>Name</label>
-                        <input type="text" name="full_name" placeholder="Full Name">
+                        <input type="text" name="full_name" placeholder="Full Name" required>
                     </div>
                     <div class="field">
                         <label>Address</label>
                         <div class="field">
                           <div class="sixteen wide field">
-                            <input type="text" name="full_address" placeholder="Address">
+                            <input type="text" name="full_address" placeholder="Address" required>
                           </div>
                         </div>
                     </div>
@@ -57,7 +57,7 @@
                         <label>Phone No.</label>
                         <div class="field">
                           <div class="eight wide field">
-                            <input type="tel" name="phone" placeholder="Phone / Mobile">
+                            <input type="tel" name="phone" placeholder="Phone / Mobile" required>
                           </div>
                         </div>
                     </div>
@@ -65,13 +65,13 @@
                         <label>Email Address</label>
                         <div class="field">
                           <div class="eight wide field">
-                            <input type="email" name="email" placeholder="Email ID">
+                            <input type="email" name="email" placeholder="Email ID" required>
                           </div>
                         </div>
                     </div>
                     <div class="field">
                         <label>Comments</label>
-                        <textarea rows="2" name="comment"></textarea>
+                        <textarea rows="2" name="comment" required></textarea>
                     </div>
                     <button name="submit_feedback" class="ui primary button" type="submit">Submit</button>
                     <button class="ui button" type="reset">Reset</button>

@@ -28,8 +28,8 @@
                         $amount = $_POST['amount'];
                         $checkno = $_POST['checkno'];
 
-                        $sql = "INSERT INTO sponsorer (spn_firstname, spn_lastname, spn_noofyears, spn_email, spn_phone, spn_bill_address, spn_amount, spn_checkno, cid) 
-                                    VALUES ('$firstname', '$lastname', '$noofyear', '$email', '$phone', '$address', '$amount', '$checkno', '$cid')";
+                        $sql = "INSERT INTO sponsorer (spn_firstname, spn_lastname, spnd_date, spn_noofyears, spn_email, spn_phone, spn_bill_address, spn_amount, spn_checkno, cid) 
+                                    VALUES ('$firstname', '$lastname', NOW(), '$noofyear', '$email', '$phone', '$address', '$amount', '$checkno', '$cid')";
                                 
                         $sql2 = "UPDATE children SET sponsored=1 WHERE cid='$cid' ";
 
@@ -106,7 +106,7 @@
                     <h4 class="ui dividing header">Sponsor Type</h4>
                     <div class="two fields">
                         <div class="field">
-                            <select name="noofyear" class="ui fluid dropdown">
+                            <select name="noofyear" class="ui fluid dropdown" required>
                                 <option value="">Number of Years</option>
                                 <option value="1">1 Year</option>
                                 <option value="2">2 Years</option>
@@ -129,7 +129,7 @@
                     <div class="fields">
                         <div class="eight wide field">
                             <label>First Name</label>
-                            <input type="text" name="firstname" placeholder="First Name">
+                            <input type="text" name="firstname" placeholder="First Name" required>
                         </div>
                         <div class="eight wide field">
                             <label>Last Name</label>
@@ -140,11 +140,11 @@
                     <div class="fields">
                         <div class="eight wide field">
                             <label>Email</label>
-                            <input type="email" name="email" placeholder="Email Address">
+                            <input type="email" name="email" placeholder="Email Address" required>
                         </div>
                         <div class="eight wide field">
                             <label>Phone No.</label>
-                            <input type="tel" name="phone" placeholder="Phone / Mobile">
+                            <input type="tel" name="phone" placeholder="Phone / Mobile" required>
                         </div>
                     </div>
 
@@ -152,7 +152,7 @@
                         <label>Billing Address</label>
                         <div class="field">
                         <div class="sixteen wide field">
-                            <input type="text" name="address" placeholder="Address">
+                            <input type="text" name="address" placeholder="Address" required>
                         </div>
                         </div>
                     </div>
@@ -160,13 +160,13 @@
                     <div class="field">
                         <div class="eight wide field">
                         <label>Amount</label>
-                        <input type="number" name="amount" min="1" maxlength="16" placeholder="Amount">
+                        <input type="number" name="amount" min="1" maxlength="16" placeholder="Amount" required>
                         </div>
                     </div>
                     <div class="field">
                         <div class="eight wide field">
                             <label>Check / DD no.</label>
-                            <input type="text" name="checkno">
+                            <input type="text" name="checkno" required>
                         </div>
                     </div>
                     <button name="submit" class="ui primary button" tabindex="0">Submit</button>

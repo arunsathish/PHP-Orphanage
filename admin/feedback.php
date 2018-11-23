@@ -9,62 +9,52 @@
         <div class="ui grid">
             <!-- Left menu -->
             <?php include './admin_components/admin_side-menu.php' ?>
-            
+
             <!-- right content -->
             <div class="twelve wide column">
-                <h1>Children - Orphan</h1>
-
-
+                <h1>Feed Back</h1>
+                
                 <table class="ui celled table">
                     <thead>
                         <tr>
-                            <th>CID</th>
-                            <th>Name</th>
-                            <th>Date of Birth</th>
-                            <th>Year of enrolled</th>
-                            <th>Class</th>
+                            <th>Feed ID</th>
+                            <th>Full Name</th>
+                            <th>Address</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Comment</th>
                         </tr>
                     </thead>
                     <tbody>
 
                         <?php
-                            $sql = "SELECT * FROM children";
+                            $sql = "SELECT * FROM feedback";
                             $result = $conn->query($sql);
     
                             if ($result->num_rows > 0) {
                                 // output data of each row
                                 while($row = $result->fetch_assoc()) {
-                                $unformated = $row['cdob'];
-                                $formateddate = date("d-m-Y", strtotime($unformated));
                         ?>
 
                         <tr>
-                            <td><?php echo $row['cid']; ?></td>
-                            <td><?php echo $row['cname']; ?></td>
-                            <td><?php echo $formateddate; ?></td>
-                            <td><?php echo $row['cyoe']; ?></td>
-                            <td><?php echo $row['cclass']; ?></td>
+                            <td><?php echo $row['feed_id']; ?></td>
+                            <td><?php echo $row['full_name']; ?></td>
+                            <td><?php echo $row['full_address']; ?></td>
+                            <td><?php echo $row['phone']; ?></td>
+                            <td><?php echo $row['email']; ?></td>
+                            <td><?php echo $row['comment']; ?></td>
                         </tr>
-                        
+
                         <?php
                                 }
                             }
                         ?>
 
                     </tbody>
-                    <tfoot class="full-width">
-                        <tr>
-                            <th colspan="5">
-                                <a class="ui primary button" href="children-add.php"> Add Children </a>
-                            </th>
-                        </tr>
-                    </tfoot>
                 </table>
-
-
                 
-            </div>
 
+            </div>
         </div>
 
     </div>

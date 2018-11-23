@@ -95,7 +95,7 @@
                                     <div class="ui horizontal list">
                                         <div class="item">
                                             <div class="content">
-                                                <div>Name:</div> <strong><?php echo $rows['spn_firstname'] . $rows['spn_lastname'] ?></strong>
+                                                <div>Name:</div> <strong><?php echo $rows['spn_firstname'] . "  " . $rows['spn_lastname'] ?></strong>
                                             </div>
                                         </div>
                                         <div class="item">
@@ -124,7 +124,7 @@
                 <?php
                     }
                     } else {
-                        echo "0 results";
+                        echo "No child is sponsored";
                     }
                 ?>
 

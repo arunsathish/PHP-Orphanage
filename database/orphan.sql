@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 20, 2018 at 04:32 PM
+-- Generation Time: Nov 23, 2018 at 05:56 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 5.6.38
 
@@ -44,11 +44,14 @@ CREATE TABLE `children` (
 --
 
 INSERT INTO `children` (`cid`, `cname`, `cdob`, `cyoe`, `cclass`, `cstory`, `cphoto`, `sponsored`) VALUES
-(7, 'Ganesh', '2006-12-20', 2009, 1, 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.', '', 0),
+(7, 'Ganesh', '2006-12-20', 2009, 1, 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.', '', 1),
 (8, 'Suraj', '2005-06-15', 2007, 3, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', '', 0),
 (9, 'Sagar', '2006-06-14', 2008, 2, 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', '', 0),
 (11, 'Nagesh', '2005-04-08', 2009, 3, 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', '', 0),
-(13, 'umesh', '2007-06-14', 2010, 4, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', '', 0);
+(13, 'umesh', '2007-06-14', 2010, 4, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', '', 0),
+(14, 'fazal', '2004-06-22', 2007, 1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus integer feugiat scelerisque varius morbi enim nunc faucibus a.', '', 0),
+(15, 'Ujwal', '2008-09-21', 2010, 1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Maecenas ultricies mi eget mauris pharetra.', '', 0),
+(16, 'Amith', '1998-12-23', 2004, 2, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Maecenas ultricies mi eget mauris pharetra.', '', 0);
 
 -- --------------------------------------------------------
 
@@ -74,9 +77,9 @@ CREATE TABLE `donation` (
 --
 
 INSERT INTO `donation` (`d_id`, `program`, `amount`, `checkno`, `bank_name`, `place`, `d_name`, `email`, `phone`, `d_address`) VALUES
-(1, 'Lakshya', 10000, '42f213', 'sbi', 'bengaluru', 'Ramesh', 'mukesh@gmail.com', 55555444, 'fghjk'),
-(2, 'Parivartan', 7870, '98da93', 'canara', 'hydrabad', 'hitesh', 'dinesh@test.com', 55555444, 'rerererer'),
-(3, 'Parivartan', 4000, '98da93', 'fedaral', 'chennai', 'Mahesh', 'mahesh@gmail.com', 22222222, 'wwqwqq');
+(1, 'Lakshya', 10000, '42f213', 'sbi', 'bengaluru', 'Ramesh', 'mukesh@gmail.com', 55555444, '309 E. Westport Dr. \r\nManchester Township, NJ 08759'),
+(2, 'Parivartan', 7870, '98da93', 'canara', 'hydrabad', 'hitesh', 'dinesh@test.com', 55555444, '7 Beech Road \r\nNew City, NY 10956'),
+(3, 'Parivartan', 4000, '98da93', 'fedaral', 'chennai', 'Mahesh', 'mahesh@gmail.com', 22222222, '764 Hill Court \r\nGlendora, CA 91740');
 
 -- --------------------------------------------------------
 
@@ -98,8 +101,8 @@ CREATE TABLE `feedback` (
 --
 
 INSERT INTO `feedback` (`feed_id`, `full_name`, `full_address`, `phone`, `email`, `comment`) VALUES
-(1, 'Vyshak', 'trtrtrtrtr', 55555444, 'vishal@gmail.com', 'fsdasdfafdads'),
-(2, 'edwin', 'trtrtrtrtr', 55555444, 'test@test.com', 'szdsadasda');
+(1, 'Vyshak', '764 Hill Court \r\nGlendora, CA 91740', 55555444, 'Vyshak@gmail.com', 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
+(2, 'edwin', '587 Riverside Ave. \r\nHephzibah, GA 30815', 55555444, 'edwin@test.com', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.');
 
 -- --------------------------------------------------------
 
@@ -123,8 +126,8 @@ CREATE TABLE `gift` (
 --
 
 INSERT INTO `gift` (`gift_id`, `cid`, `gift_type`, `sending_date`, `sender_name`, `email`, `phone`, `sender_address`) VALUES
-(1, 8, 'dress', '2018-11-30', 'test', 'mukesh@gmail.com', 55555444, 'rsqrk'),
-(2, 9, 'helicopter', '2018-11-30', 'fazal', 'karthikareddy@gmail.com', 2147483647, 'rrrrrr');
+(1, 8, 'dress', '2018-11-30', 'test', 'mukesh@gmail.com', 687698675, '587 Riverside Ave. \r\nHephzibah, GA 30815'),
+(2, 9, 'helicopter', '2018-11-30', 'fazal', 'karthikareddy@gmail.com', 659586785, '10 Strawberry Drive \r\nLorain, OH 44052');
 
 -- --------------------------------------------------------
 
@@ -151,7 +154,8 @@ CREATE TABLE `member` (
 --
 
 INSERT INTO `member` (`user_id`, `username`, `password`, `join_date`, `first_name`, `last_name`, `gender`, `birthdate`, `city`, `state`, `picture`) VALUES
-(1, 'testname', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '2018-11-17 06:01:40', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(1, 'testname', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '2018-11-17 06:01:40', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(2, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', '2018-11-23 21:45:11', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -172,7 +176,7 @@ CREATE TABLE `newsletter` (
 
 INSERT INTO `newsletter` (`n_id`, `n_issue`, `n_story`, `n_month`) VALUES
 (1, 'News for Poonam', ' Poonam, 7 years old child living with her parents who are involved in working as feiwale, having no fixed income source and spending whole day moving from one corner to another to earn their livelihood. Poonam also used to work with her parents to sell different items which was in actuallu spoting her education career and childhood. With the step ahead and support of OFD, now Poonam is a part of students who are getting education in the learning centres aparted by OFD. She is now also taking part in co-curricular activities. A major change, this girl poonam and her friend had given a presentation aar Le-Meridian on December 20, 2007 in a conference arranged by Govt India with the support of Mr.Ajay Bakaya (Executive Director, Sarover Group of Hotels.', 'June'),
-(2, 'Random topic', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'August');
+(2, 'Newly born children', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'August');
 
 -- --------------------------------------------------------
 
@@ -208,6 +212,7 @@ CREATE TABLE `sponsorer` (
   `spn_id` int(3) NOT NULL,
   `spn_firstname` varchar(30) NOT NULL,
   `spn_lastname` varchar(30) DEFAULT NULL,
+  `spnd_date` date NOT NULL,
   `spn_noofyears` int(2) NOT NULL,
   `spn_email` varchar(30) NOT NULL,
   `spn_phone` int(20) NOT NULL,
@@ -221,11 +226,8 @@ CREATE TABLE `sponsorer` (
 -- Dumping data for table `sponsorer`
 --
 
-INSERT INTO `sponsorer` (`spn_id`, `spn_firstname`, `spn_lastname`, `spn_noofyears`, `spn_email`, `spn_phone`, `spn_bill_address`, `spn_amount`, `spn_checkno`, `cid`) VALUES
-(15, 'dinesh', 'sharma', 3, 'dinesh@test.com', 2147483647, 'abcd', 4, '183', 9),
-(16, 'kalidas', 'venkat', 2, 'kalidas@gmail.com', 2147483647, 'xyz', 300, '898ssss', 11),
-(17, 'tilak', 'm', 5, 'tilak@gmail.com', 45005405, 'asdfsdf', 1100, '3232d', 8),
-(18, 'KNVL ', 'jagan', 5, 'mukesh@gmail.com', 99999999, 'rtyui', 2000, '3rert', 13);
+INSERT INTO `sponsorer` (`spn_id`, `spn_firstname`, `spn_lastname`, `spnd_date`, `spn_noofyears`, `spn_email`, `spn_phone`, `spn_bill_address`, `spn_amount`, `spn_checkno`, `cid`) VALUES
+(18, 'Ravi', 'chander', '2018-11-23', 2, 'ravichander@gmail.com', 22222222, '618 Greenrose Dr. \r\nSchererville, IN 46375\r\n', 40000, '2w3e4r5t', 7);
 
 --
 -- Indexes for dumped tables
@@ -287,7 +289,7 @@ ALTER TABLE `sponsorer`
 -- AUTO_INCREMENT for table `children`
 --
 ALTER TABLE `children`
-  MODIFY `cid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `cid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `donation`
@@ -299,7 +301,7 @@ ALTER TABLE `donation`
 -- AUTO_INCREMENT for table `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `feed_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `feed_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `gift`
@@ -311,7 +313,7 @@ ALTER TABLE `gift`
 -- AUTO_INCREMENT for table `member`
 --
 ALTER TABLE `member`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `newsletter`

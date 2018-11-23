@@ -1,5 +1,5 @@
         <!-- Top Navigation Bar -->
-        <div class="ui menu">
+        <div class="ui grey inverted menu">
             <div class="header item">
                 Orphan Foundation Development
             </div>
